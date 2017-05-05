@@ -19,7 +19,6 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class EmbeddedTestkitSessionTest {
-	//private EmbeddedTestkitSession ets;
 
 	private EmbeddedTestkitSession mEts;
 	private GraphDatabaseService mockGds;
@@ -70,23 +69,6 @@ public class EmbeddedTestkitSessionTest {
 		verify(mockGds, times(1)).execute(statementTemplate, Collections.emptyMap());
 		assertEquals(true, compareStatementResults(exp_res, result));
 	}
-
-//	@Test
-//	public void run_string_value(){
-//		//Arrange
-//		String statementTemplate = "test statement";
-//		Value statementParam = new MapValue("valueKey", );
-//		StatementResult exp_res = new EmbeddedTestkitStatementResult(dummyResult);
-//
-//		when(mockGds.execute(statementTemplate, statementParam.asMap())).thenReturn(dummyResult);
-//
-//		//Act
-//		StatementResult result =  mEts.run(statementTemplate, statementParam);
-//
-//		//Assert
-//		verify(mockGds, times(1)).execute(statementTemplate, statementParam.asMap());
-//		assertEquals(true, compareStatementResults(exp_res, result));
-//	}
 
 	@Test
 	public void run_statement(){
